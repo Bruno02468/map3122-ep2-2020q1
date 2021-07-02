@@ -1,0 +1,31 @@
+Comandos disponíveis no Makefile:
+  
+  help: mostra essa ajuda.
+  
+  clean: remove todos os executáveis compilados e arquivos de dados.
+  
+  ex1-bin: compila o executável otimizado do exercício 1.
+  
+  ex1-anim-10: abre uma animação da solução do exercício 1 com c^2 = 10.
+
+  ex1-anim-20: abre uma animação da solução do exercício 1 com c^2 = 20.
+  
+  ex2-bin: compila o executável otimizado do exercício 2.
+  
+  ex2-dr{3, 10, ou 20}-{cholesky ou sor}: resolve um problema do exercício 2
+  para um dado arquivo e método (e.g. "make ex2-dr10-sor").
+  
+  erroinv-bin: compila o executável erroinv, que testa o problema inverso com
+  sismogramas que ele mesmo gera.
+  
+  ruidificador-bin: compila o executável ruidificador, que insere ruído em
+  seções de um sismograma.
+  
+  ex3-bin: compila o executável otimizado do exercício 3.
+
+  ex3-{3, 4, ou 5}-{cholesky ou sor}: compara soluções com e sem ruído
+  (eta=10^-n) do dr10.txt (e.g. "make ex3-4-cholesky").
+
+  plotar-ruido-{3, 4, ou 5}: plota uma comparação de sismogramas com e sem ruído
+  (eta=10^-n) do dr10.txt (e.g. "make plotar-ruido-5").
+

@@ -1,0 +1,59 @@
+Os comandos do Makefile são apenas para agilizar, e apesar do GNU Make estar
+disponível na maioria dos terminais em que também se espera encontrar o GCC, é
+uma boa ideia listar os comandos de compilação completos aqui.
+
+
+===============================================================================
+
+
+Para compilar o binário do exercício 1:
+
+gcc --pedantic -ansi -Wall -Wno-unused-result -O3 src/*.c src/mains/ex1.c -o ex1 -lm
+
+
+Para compilar o binário do exercício 2:
+
+gcc --pedantic -ansi -Wall -Wno-unused-result -O3 src/*.c src/mains/ex2.c -o ex2 -lm
+
+
+Para compilar o binário do exercício 3:
+
+gcc --pedantic -ansi -Wall -Wno-unused-result -O3 src/*.c src/mains/ex3.c -o ex3 -lm
+
+
+===============================================================================
+
+
+Além disso, também listarei alguns exemplos de invocações corretas:
+
+
+Exemplo de invocação do exercício 1 (animação com c²=20):
+
+./ex1 20 10 1 1 0.7 200 6000 ex1.mat && src/mains/plotar_ex1.py ex1.mat
+
+
+Exemplo de invocação do exercício 2 (problema inverso com dr3.txt):
+
+./ex2 20 10 1 1 0.7 100 1000 0.5 1 1.6 10000 3 dados/dr3.txt cholesky 0.2 0.3 0.9 0.1 40 7.5
+
+
+Exemplo de invocação do exercício 3 (ruido com eta=10⁻⁴)
+
+./ex3 20 10 1 1 0.7 100 1000 0.9 1 1.6 10000 0.0001 10 dados/dr10.txt cholesky 0.03 0.15 0.17 0.25 0.33 0.34 0.40 0.44 0.51 0.73 7.3 2.4 5.7 4.7 0.1 20 5.1 6.1 2.8 15.3
+
+
+===============================================================================
+
+
+Esses comandos parecem longos, e é por isso que eu os compilei no Makefile.
+
+Ainda assim, há lógica nesses parâmetros de terminal. Experimente invocar um
+desses programas sem parâmetros, ou com algum parâmetro errado, e será
+informado exatamente o que estava errado. Exemplo:
+
+[bruno@Bruno-Ubuntu EP2] $ ./ex2
+O método de resolução de sistemas lineares deve ser "sor" ou "cholesky"!
+
+Invocação: ./ex2 [c^2=20] [beta=10] [T=1] [X=1] [xr=0.7] [nx=100] [nt=1000] [ti=0] [tf=1] [omega=1.6] [itmax=10000] [K] [arquivo de dados] [metodo=sor|cholesky] x1 x2 x3 {a1} {a2} {a3}...
+
+As intensidades reais são opcionais, para cálculo do erro L2.
